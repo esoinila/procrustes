@@ -328,9 +328,23 @@ def setup_input_arrays(
     array_a, vector_to_b_centroid, used_scaling_factor = _setup_input_array_lower(
         array_a, None, remove_zero_col, remove_zero_row, translate, scale, check_finite, weight
     )
+    print("a array scaling was done with scale = ")
+    print(used_scaling_factor)
+
+    print("a array translation fixing vector is = ")
+    print(vector_to_b_centroid)
+
+
     array_b, vector_to_b_centroid, used_scaling_factor = _setup_input_array_lower(
         array_b, None, remove_zero_col, remove_zero_row, translate, scale, check_finite, weight
     )
+    print("b array scaling was done with scale = ")
+    print(used_scaling_factor)
+
+    print("b array translation fixing vector is = ")
+    print(vector_to_b_centroid)
+
+
     if pad:
         array_a, array_b = _zero_padding(array_a, array_b, pad_mode="row-col")
     return array_a, array_b
@@ -437,6 +451,7 @@ def _setup_input_array_lower(
 
     if scale:
         array_a, used_scaling_factor = _scale_array(array_a, array_ref)
+    
     return array_a, vector_to_b_centroid, used_scaling_factor
 
 
