@@ -142,8 +142,8 @@ def orthogonal(
     >>> print(result.new_b)      # translated array b
 
     """
-    # check inputs
-    new_a, new_b, vector_to_b_centroid, used_scaling_factor = setup_input_arrays(
+    # check inputs # vector_to_b_centroid, used_scaling_factor
+    new_a, new_b  = setup_input_arrays(
         a,
         b,
         unpad_col,
@@ -166,7 +166,7 @@ def orthogonal(
     # compute one-sided error
     error = compute_error(new_a, new_b, u_opt)
 
-    return ProcrustesResult(error=error, new_a=new_a, new_b=new_b, t=u_opt, s=None, used_scaling_factor = used_scaling_factor)
+    return ProcrustesResult(error=error, new_a=new_a, new_b=new_b, t=u_opt, s=None, vector_to_b_centroid = None, used_scaling_factor = None)
 
 
 def orthogonal_2sided(
