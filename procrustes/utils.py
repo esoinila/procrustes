@@ -325,10 +325,10 @@ def setup_input_arrays(
         Returns the padded arrays, in that they have the same matrix dimensions.
 
     """
-    array_a = _setup_input_array_lower(
+    array_a, vector_to_b_centroid, used_scaling_factor = _setup_input_array_lower(
         array_a, None, remove_zero_col, remove_zero_row, translate, scale, check_finite, weight
     )
-    array_b = _setup_input_array_lower(
+    array_b, vector_to_b_centroid, used_scaling_factor = _setup_input_array_lower(
         array_b, None, remove_zero_col, remove_zero_row, translate, scale, check_finite, weight
     )
     if pad:
@@ -437,7 +437,7 @@ def _setup_input_array_lower(
 
     if scale:
         array_a, used_scaling_factor = _scale_array(array_a, array_ref)
-    return array_a
+    return array_a, vector_to_b_centroid, used_scaling_factor
 
 
 def _check_arraytypes(*args) -> None:
