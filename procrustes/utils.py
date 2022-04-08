@@ -436,7 +436,7 @@ def _setup_input_array_lower(
             array_a = np.dot(np.diag(weight), array_a)
 
     if scale:
-        array_a, _ = _scale_array(array_a, array_ref)
+        array_a, used_scaling_factor = _scale_array(array_a, array_ref)
     return array_a
 
 
