@@ -143,7 +143,7 @@ def orthogonal(
 
     """
     # check inputs
-    new_a, new_b = setup_input_arrays(
+    new_a, new_b, vector_to_b_centroid, used_scaling_factor = setup_input_arrays(
         a,
         b,
         unpad_col,
@@ -166,7 +166,7 @@ def orthogonal(
     # compute one-sided error
     error = compute_error(new_a, new_b, u_opt)
 
-    return ProcrustesResult(error=error, new_a=new_a, new_b=new_b, t=u_opt, s=None)
+    return ProcrustesResult(error=error, new_a=new_a, new_b=new_b, t=u_opt, s=None, used_scaling_factor = used_scaling_factor)
 
 
 def orthogonal_2sided(
@@ -340,7 +340,7 @@ def orthogonal_2sided(
     #     )
 
     # Check inputs
-    new_a, new_b = setup_input_arrays(
+    new_a, new_b, vector_to_b_centroid, used_scaling_factor = setup_input_arrays(
         a,
         b,
         unpad_col,
@@ -380,4 +380,4 @@ def orthogonal_2sided(
     u_opt1 = np.dot(ua, ub.T)
     u_opt2 = np.dot(vta.T, vtb)
     error = compute_error(new_a, new_b, u_opt2, u_opt1.T)
-    return ProcrustesResult(error=error, new_a=new_a, new_b=new_b, t=u_opt2, s=u_opt1.T)
+    return ProcrustesResult(error=error, new_a=new_a, new_b=new_b, t=u_opt2, s=u_opt1.T, vector_to_b_centroid = vector_to_b_centroid, used_scaling_factor = used_scaling_factor)
