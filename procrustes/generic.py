@@ -56,7 +56,7 @@ def generic(
        \underbrace{\text{min}}_{\mathbf{T}} \quad \|\mathbf{A} \mathbf{T} - \mathbf{B}\|_{F}^2
 
     This Procrustes method requires the :math:`\mathbf{A}` and :math:`\mathbf{B}` matrices to
-    have the same shape, which is gauranteed with the default ``pad`` argument for any given
+    have the same shape, which is guaranteed with the default ``pad`` argument for any given
     :math:`\mathbf{A}` and :math:`\mathbf{B}` matrices. In preparing the :math:`\mathbf{A}` and
     :math:`\mathbf{B}` matrices, the (optional) order of operations is: **1)** unpad zero
     rows/columns, **2)** translate the matrices to the origin, **3)** weight entries of
