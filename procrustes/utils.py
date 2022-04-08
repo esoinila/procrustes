@@ -429,7 +429,7 @@ def _setup_input_array_lower(
         # Sometimes arrays already have zero padding that messes up zero padding below.
     array_a = _hide_zero_padding(array_a, remove_zero_col, remove_zero_row)
     if translate:
-        array_a, _ = _translate_array(array_a, array_ref, weight)
+        array_a, vector_to_b_centroid = _translate_array(array_a, array_ref, weight)
     # scale the matrix when translate is False, but weight is True
     else:
         if weight is not None:
