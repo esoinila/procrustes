@@ -27,7 +27,7 @@
 from typing import Optional
 
 import numpy as np
-from procrustes.utils import compute_error, ProcrustesResult, setup_input_arrays
+from my_procrustes.procrustes.utils import compute_error, ProcrustesResult, setup_input_arrays
 import scipy
 
 

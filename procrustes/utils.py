@@ -448,6 +448,9 @@ def _check_arraytypes(*args) -> None:
         raise TypeError("Matrix inputs must be 2-dimensional arrays")
 
 
+def return_hello():
+    return "hello"
+
 class ProcrustesResult(dict):
     r"""Represents the Procrustes analysis result.
 

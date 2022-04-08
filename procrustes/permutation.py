@@ -24,8 +24,8 @@
 from typing import Optional
 
 import numpy as np
-from procrustes.kopt import kopt_heuristic_double, kopt_heuristic_single
-from procrustes.utils import _zero_padding, compute_error, ProcrustesResult, setup_input_arrays
+from my_procrustes.procrustes.kopt import kopt_heuristic_double, kopt_heuristic_single
+from my_procrustes.procrustes.utils import _zero_padding, compute_error, ProcrustesResult, setup_input_arrays
 import scipy
 from scipy.optimize import linear_sum_assignment
 

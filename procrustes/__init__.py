@@ -28,13 +28,23 @@ try:
 except ImportError:
     __version__ = "0.0.0.post0"
 
+from my_procrustes.procrustes.utils import *
+from my_procrustes.procrustes.kopt import *
+from my_procrustes.procrustes.orthogonal import *
+from my_procrustes.procrustes.permutation import *
+from my_procrustes.procrustes.rotational import *
+from my_procrustes.procrustes.softassign import *
+from my_procrustes.procrustes.symmetric import *
+from my_procrustes.procrustes.generic import *
+from my_procrustes.procrustes.generalized import *
 
-from procrustes.utils import *
-from procrustes.kopt import *
-from procrustes.orthogonal import *
-from procrustes.permutation import *
-from procrustes.rotational import *
-from procrustes.softassign import *
-from procrustes.symmetric import *
-from procrustes.generic import *
-from procrustes.generalized import *
+
+#from procrustes.utils import *
+#from procrustes.kopt import *
+#from procrustes.orthogonal import *
+#from procrustes.permutation import *
+#from procrustes.rotational import *
+#from procrustes.softassign import *
+#from procrustes.symmetric import *
+#from procrustes.generic import *
+#from procrustes.generalized import *
